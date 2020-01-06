@@ -1,5 +1,4 @@
 import React from 'react';
-// import Login from './Login/login'
 import Reg from './Login/reg'
 function App() {
   return (
@@ -9,5 +8,4 @@ function App() {
     </div>
   );
 }
-
-export default App;
+export default App
