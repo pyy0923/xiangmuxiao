@@ -1,13 +1,12 @@
 import React from 'react';
-// import Login from './Login/login'
-import Reg from './Login/reg'
-function App() {
-  return (
-    <div className="App">
-    {/* <Login></Login> */}
-    <Reg></Reg>
-    </div>
-  );
+ 
+class App extends React.Component{
+  render(){
+    return (
+      <div className='App'>
+        这里是App组件
+      </div>
+    )
+  }
 }
-
-export default App;
+export default App
