@@ -61,7 +61,7 @@ class Login extends React.Component{
                     <Button type="primary" onClick={this.login}>
                       Log in
                     </Button>
-                    Or <a href="">register now!</a>
+                    or <a href="">register now!</a>
                   </Form.Item>
               </Card> 
           </div>
