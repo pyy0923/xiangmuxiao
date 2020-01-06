@@ -15,6 +15,7 @@ class AppRouter extends React.Component{
             <HashRouter>
                 <NavLink to='/admin'></NavLink>
                 <Switch>
+                    <Redirect exact from='/' to='/login'></Redirect>
                     <Route path='/login' component={Login}></Route>
                     <Route path='/admin' render={()=>{
                         return(

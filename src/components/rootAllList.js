@@ -12,18 +12,18 @@ export default [
       id:'1'
     },
     {
-      name:'商品管理',
+      name:'图书管理',
       icon:"",
       path:'',
       id:'2',
       children:[
         {
-          name:'商品列表',
+          name:'图书列表',
           path:'/admin/goods/list',
           id:'2-0'
         },
         {
-          name:'商品添加',
+          name:'图书添加',
           path:'/admin/goods/add',
           id:'2-1'
         }
