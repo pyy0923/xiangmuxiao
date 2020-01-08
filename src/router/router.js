@@ -5,9 +5,9 @@ import Login from '../pages/Login/Login'
 import Admin from '../pages/Admin/Admin.js'
 import Home from '../pages/Home/Home'
 import Setting from '../pages/Set/Set'
-import GoodsList from '../pages/Goods/List/List'
-import GoodsAdd from '../pages/Goods/Add/Add'
-
+import BookssList from '../pages/Books/List/list'
+import BooksAdd from '../pages/Books/Add/add'
+import BooksSeek from '../pages/Books/Seek/seek'
 
 class AppRouter extends React.Component{
     render(){
@@ -24,8 +24,9 @@ class AppRouter extends React.Component{
                                 <Redirect exact from='/admin' to='/admin/home'></Redirect>
                                 <Route path='/admin/home' component={Home}></Route>
                                 <Route path='/admin/setting' component={Setting}></Route>
-                                <Route path='/admin/goods/list' component={GoodsList}></Route>
-                                <Route path='/admin/goods/add' component={GoodsAdd}></Route>
+                                <Route path='/admin/books/list' component={BookssList}></Route>
+                                <Route path='/admin/books/add' component={BooksAdd}></Route>
+                                <Route path='/admin/books/seek' component={BooksSeek}></Route>
                             </Switch>
                             </Admin>
                         )
