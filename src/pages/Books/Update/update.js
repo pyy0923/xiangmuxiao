@@ -15,7 +15,7 @@ class updateBook extends Component{
         // console.log('state改变',this.state)
       }
     submit=()=>{
-        // console.log('修改后',this.state)
+        console.log('修改后',this.state)
         UpdateBooks(this.state)
             .then((data)=>{
                 message.success('修改完成')

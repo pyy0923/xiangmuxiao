@@ -34,8 +34,8 @@ async function del(bid){
 
 // 修改
 async function  update(bid,name,category,desc,price){
-  console.log('这里是id',bid)
-  let result  = await BookModule.updateOne({bid:bid},{bid,name,category,desc,price})
+  console.log('这里是id',bid,name,category,desc,price)
+  let result  = await BookModule.updateOne({bid},{bid,name,category,desc,price})
    console.log(result)
    return  result
 }
