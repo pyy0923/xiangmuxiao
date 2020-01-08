@@ -12,7 +12,7 @@ class SliderNav extends React.Component{
     }
     componentDidMount(){
         setTimeout(()=>{
-            let res={err:0,msg:'ok',token:'123',rootIds:['1','0','2']}
+            let res={err:0,msg:'ok',token:'123',rootIds:['1','0','2','3']}
             let result=filterRootList(res.rootIds)
             this.setState({menuData:result})
         },500)
