@@ -18,7 +18,7 @@ class Admin extends React.Component{
               <SliderNav></SliderNav>
             </Sider>
             <Layout>
-              <Header style={{ background: '#fff', padding: 0 }}>
+              <Header style={{ background: '#fff', padding: 0,textAlign:'right',paddingRight:'20px',cursor:'pointer'}} >
                 <Icon className="trigger"/>
                 <HeaderNav></HeaderNav>
               </Header>
@@ -32,7 +32,12 @@ class Admin extends React.Component{
                 >
                {this.props.children}
               </Content>
-              <Footer>读书破万卷，下笔如有神。</Footer>
+              <Footer style={{height:'80px'}}>
+                <div className={styles.foot}>
+                  版权所有:天韵组
+                  <p><em>本网站纯属意外只为奖品而生，如有雷同纯属正常</em></p>
+                </div>
+              </Footer>
             </Layout>
           </Layout>
            <Modal

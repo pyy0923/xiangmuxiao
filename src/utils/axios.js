@@ -3,7 +3,6 @@ import {getItem} from './webStorage'
 import store from  '../store/store'
 import ActionCreator from  '../store/actionCreator'
 axios.interceptors.request.use(function (config) {
-  // console.log(config)
   config.data.token=getItem('token')||''
   return config;
 }, function (error) {
