@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose')
 let bookSchema= mongoose.Schema({
-    bid:{type:Number,require:true},
+    bid:{type:String,require:true},
     name:{ type:String,required:true },
     category:{ type:String,required:true },
     desc:{ type:String,required:true },
