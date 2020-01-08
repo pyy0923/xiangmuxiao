@@ -12,19 +12,19 @@ export default [
       id:'1'
     },
     {
-      name:'图书管理',
-      icon:"",
+      name:'人员管理',
+      icon:"user",
       path:'',
       id:'2',
       children:[
         {
-          name:'图书列表',
-          path:'/admin/goods/list',
+          name:'违规列表',
+          path:'/admin/people/list',
           id:'2-0'
         },
         {
-          name:'图书添加',
-          path:'/admin/goods/add',
+          name:'违规人员添加',
+          path:'/admin/people/add',
           id:'2-1'
         }
       ]

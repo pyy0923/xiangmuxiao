@@ -23,7 +23,7 @@ class SliderNav extends React.Component{
             if(item.children){
                 return(
                     <SubMenu key={item.id} title={<span>
-                        <Icon type={item.icon||'home'}></Icon>
+                        <Icon type={item.icon||'user'}></Icon>
                     <span>{item.name||'hehe'}</span>
                     </span>}>
                        {this.renderItem(item.children)}
@@ -34,7 +34,7 @@ class SliderNav extends React.Component{
                     <Menu.Item key={item.id}>
                         <Link to={item.path||'/admin'}>
                         <span>
-                            <Icon type={item.icon||'home'}></Icon>
+                            <Icon type={item.icon||'user'}></Icon>
                 <span>{item.name||'hehe'}</span>
                         </span>
                         </Link>
