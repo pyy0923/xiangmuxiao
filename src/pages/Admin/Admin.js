@@ -32,7 +32,7 @@ class Admin extends React.Component{
                 >
                {this.props.children}
               </Content>
-              <Footer>你大爷终究还是你大爷</Footer>
+              <Footer>读书破万卷，下笔如有神。</Footer>
             </Layout>
           </Layout>
            <Modal
