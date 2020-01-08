@@ -1,12 +1,12 @@
 import React from 'react';
- 
-class App extends React.Component{
-  render(){
-    return (
-      <div className='App'>
-        这里是App组件
-      </div>
-    )
-  }
+
+function App() {
+  return (
+    <div className="App">
+
+
+    </div>
+  );
 }
-export default App
+
+export default App;
