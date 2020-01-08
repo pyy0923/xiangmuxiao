@@ -92,7 +92,7 @@ class GoodsList extends Component{
     .then(()=>{
       message.success('查询成功',1)
      if(this.state.kw){
-       console.log(this.state)
+      //  console.log(this.state)
        this.state.dataSource.map((item,index)=>{
          if(item.caixi==this.state.kw){
            this.state.chaMenu.push(item)

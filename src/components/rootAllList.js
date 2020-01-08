@@ -63,11 +63,13 @@ export default [
       children:[
         {
           name:'菜单列表',
+          icon:"menu",
           path:'/admin/menus/list',
           id:'4-0'
         },
         {
           name:'菜系添加',
+          icon:"menu",
           path:'/admin/menus/add',
           id:'4-1'
         }
