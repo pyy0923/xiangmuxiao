@@ -94,7 +94,7 @@ class seekBook extends Component{
         let {dataSource,allCount,spinning,drawerShow,updataData,kw}=this.state
         return (
             <div>
-                查找: <input type='text' onChange={(e)=>{this.setState({kws:e.target.value})}} />
+                查找: <input type='text' placeholder='书名查找' onChange={(e)=>{this.setState({kws:e.target.value})}} />
                 {/* 查找: <input type='text' onChange={(e)=>{this.seekTableData(e.target.value)}} /> */}
                     <Button onClick={this.seekTableData}>确定</Button>
                 <Spin spinning={spinning}>

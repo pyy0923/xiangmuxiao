@@ -19,7 +19,7 @@ async function get(page,pageSize){
 // 关键字查询
 async function getByKw(kw,page,pageSize){
  let regex=new RegExp(kw) 
- let  allBooks=await BookModule.find({$or:[{name:{$regex:regex}},{bid:{$regex:regex}}]})
+ let  allBooks=await BookModule.find({$or:[{name:{$regex:regex}}]})
  let  allCount = allBooks.length
  let  books=await BookModule.find({$or:[{name:{$regex:regex}}]}).skip((page-1)*pageSize).limit(pageSize)
  return {books,allCount}
