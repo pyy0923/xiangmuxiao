@@ -31,22 +31,25 @@ export default [
     },
     {
       name:'图书管理',
-      icon:"",
+      icon:"book",
       path:'',
       id:'3',
       children:[
         {
           name:'图书列表',
+          icon:"book",
           path:'/admin/books/list',
           id:'3-0'
         },
         {
           name:'图书添加',
+          icon:"book",
           path:'/admin/books/add',
           id:'3-1'
         },
         {
           name:'图书查找',
+          icon:"book",
           path:'/admin/books/seek',
           id:'3-2'
         }
