@@ -84,13 +84,13 @@ export default [
         {
           name:'地区列表',
           icon:"menu",
-          path:'/admin/menus/list',
+          path:'/admin/region/list',
           id:'6-0'
         },
         {
           name:'地区添加',
           icon:"menu",
-          path:'/admin/menus/add',
+          path:'/admin/region/add',
           id:'6-1'
         }
       ]

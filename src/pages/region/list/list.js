@@ -1,49 +1,31 @@
 import React, { Component,Fragment } from 'react';
 import {Table,Pagination,Spin,Button,Popconfirm, message,Drawer} from 'antd'
-import {GetGoods,DelGood} from  '../../../api/goods'
+import {GetRegion,DelRegion,chaRegion} from  '../../../api/region'
+import UpdateRegion from '../update/Update'
+import styles from './list.module.less'
 
-// const dataSource=[
-//   {hehe:'1',name:'呵呵',desc:'副经理说杰弗里斯',address:'逮虾户'},
-//   {hehe:'2',name:'呵呵',desc:'副经理说杰弗里斯',address:'逮虾户'},
-//   {hehe:'3',name:'呵呵',desc:'副经理说杰弗里斯',address:'逮虾户'}
-// ] 
-const pageSize=3
-class GoodsList extends Component{
+const pageSize=5
+class RegionList extends Component{
   constructor(){
     super()
     this.columns=[
       {
-        title:'id',
-        dataIndex:'_id',
+        title:'编号',
+        dataIndex:'rid',
         width:100,
         ellipsis: true,
-        // fixed:'left'
       },
       {
-        title:'姓名',
+        title:'地区名',
         dataIndex:'name',
-        // fixed:'left'
       },
       {
-        title:'描述',
+        title:'地区简介',
         dataIndex:'desc',
       },
       {
-        title:'价格',
-        dataIndex:'price',
-      },
-      {
-        title:'类型',
-        dataIndex:'foodType',
-      },
-      {
-        title:'图片',
-        dataIndex:'img',
-        render(data) {
-          return (
-            <img src={data} width='100' height='80' alt=""/>
-          )
-        },
+        title:'邮政编码',
+        dataIndex:'postal',
       },
       {
         title:'操作',
@@ -54,7 +36,7 @@ class GoodsList extends Component{
               <Popconfirm
                 title='确定要删除本条数据吗？'
                 onConfirm={()=>{
-                  this.delData(data._id)
+                  this.delData(data.rid)
                 }}
                 okText='删除'
                 cancelText='取消'
@@ -62,7 +44,7 @@ class GoodsList extends Component{
                 <Button type='danger' size='small'>删除</Button>
               </Popconfirm>
               <Button type='primary' size='small' onClick={()=>{
-                this.setState({drawerShow:true})
+                this.setState({drawerShow:true,updataInfo:data})
               }}>修改</Button>
             </Fragment>
           )
@@ -75,14 +57,17 @@ class GoodsList extends Component{
       nowPage:1, //当前页数
       allCount:0, // 总数据条数
       dataSource:[],
+      updataInfo:{},
+      chaRegion:[],
+      kw:''
     }
   }
   componentDidMount(){
       this.getTableData(1)
   }
-  delData(id){
+  delData(rid){
   //  网络请求
-    DelGood(id).then(()=>{
+  DelRegion(rid).then(()=>{
       message.success('删除ok',1)
       this.getTableData()
     })
@@ -92,21 +77,36 @@ class GoodsList extends Component{
   getTableData(nowPage=1){
     // 根据页数获取网络数据
     this.setState({spinning:true})
-    GetGoods(nowPage,pageSize)
+    GetRegion(nowPage,pageSize)
     .then((res)=>{
-      this.setState({dataSource:res.list.foods,allCount:res.list.allCount,spinning:false})
+      this.setState({dataSource:res.list.region,allCount:res.list.allCount,spinning:false})
     })
   }
+  submit=()=>{
+    chaRegion(pageSize,this.state)
+    .then(()=>{
+      message.success('查询成功',1)
+     if(this.state.kw){
+       this.state.dataSource.map((item,index)=>{
+         if(item.name==this.state.kw){
+           this.state.chaRegion.push(item)
+           this.setState({dataSource: this.state.chaRegion})
+          }
+       })
+     }
+    })
+    .catch((err)=>{ message.error('查询失败',1)})
+  }
   render(){
-    let {dataSource,allCount,spinning,drawerShow}=this.state
+    let {dataSource,allCount,spinning,drawerShow,updataInfo,kw}=this.state
     return (
       <div >
         <Spin spinning={spinning}>
          <Table columns={this.columns} 
           dataSource={dataSource}
-          rowKey='_id'
+          rowKey='sid'
           pagination={false}
-          scroll={{y:280}}
+          scroll={{y:500}}
           ></Table>
         </Spin>
         <Pagination 
@@ -121,12 +121,31 @@ class GoodsList extends Component{
           closable={true}
           onClose={()=>{this.setState({drawerShow:false}) }}
           visible={drawerShow}
+          placement='bottom'
+          height='400px'
+          style={{textAlign:'center',marginTop:'20px'}}
         >
-          这里是修改的抽屉
+           <UpdateRegion
+            updataInfo={updataInfo} 
+            refreshList={()=>{
+              // 收起抽屉
+              this.setState({drawerShow:false}) 
+              // 更新完毕后刷新界面
+              this.getTableData()
+            }}></UpdateRegion>
         </Drawer>
+        <div className={styles.zi}>
+         <input type='text' value={kw} 
+          onChange={(e)=>{
+            this.setState({kw:e.target.value})
+          }}
+          placeholder="请输入地区"
+          />
+          <Button type='primary' onClick={this.submit} >地区查询</Button>
+      </div>
       </div>
     );
   }
 }
 
-export default GoodsList;
+export default RegionList;

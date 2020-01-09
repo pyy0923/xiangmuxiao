@@ -11,6 +11,8 @@ import PeopleList from '../pages/People/List/List'
 import PeopleAdd from '../pages/People/Add/Add'
 import MenusList from '../pages/Menus/List/List'
 import MenusAdd from '../pages/Menus/Add/Add'
+import RegionList from '../pages/region/list/list'
+import RegionAdd from '../pages/region/add/add'
 
 class AppRouter extends React.Component{
     render(){
@@ -36,6 +38,10 @@ class AppRouter extends React.Component{
 
                                 <Route path='/admin/menus/list' component={MenusList}></Route>
                                 <Route path='/admin/menus/add' component={MenusAdd}></Route>
+
+                                <Route path='/admin/region/list' component={RegionList}></Route>
+                                <Route path='/admin/region/add' component={RegionAdd}></Route>
+
                             </Switch>
                             </Admin>
                         )
