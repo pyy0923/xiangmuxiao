@@ -1,4 +1,4 @@
- import React from 'react'
+import React from 'react'
 class Set extends React.Component{
     render(){
         return(
@@ -9,4 +9,4 @@ class Set extends React.Component{
     }
 }
 
-export default Set  
+export default Set

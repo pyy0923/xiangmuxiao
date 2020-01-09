@@ -1,11 +1,12 @@
 import React from 'react'
 import styles from './login.module.less'
-import {Card,Form,Input,Icon,Checkbox,Button,message} from 'antd'
+import {Card,Form,Input,Icon,Button,message} from 'antd'
 import { UserLogin } from '../../api/user'
 import { setItem } from '../../utils/webStorage'
 class Login extends React.Component{
     login=()=>{
         let {validateFields}=this.props.form
+        
         validateFields((err,data)=>{
             if(err) return message.error('输入有误，请重试',1)
             let {userName,passWord}=data
@@ -53,15 +54,10 @@ class Login extends React.Component{
                   />
                 )}  
               </Form.Item>
-                  <Form.Item>
-                    <Checkbox>Remember me</Checkbox>
-                    <a className="login-form-forgot" href="">
-                      Forgot password
-                    </a>
-                    <Button type="primary" onClick={this.login}>
-                      Log in
+                  <Form.Item >   
+                    <Button type="primary" onClick={this.login} >
+                      登录
                     </Button>
-                    Or <a href="">register now!</a>
                   </Form.Item>
               </Card> 
           </div>

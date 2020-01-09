@@ -54,7 +54,7 @@ class HeaderNav extends React.Component{
           return (
             <Dropdown overlay={this.renderMenu(menuData)}>
               <span className="ant-dropdown-link">
-                天韵组 <Icon type="down" />
+              天韵组 <Icon type="down" />
               </span>
             </Dropdown>
           );
