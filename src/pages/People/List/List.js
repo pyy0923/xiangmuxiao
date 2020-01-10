@@ -3,6 +3,7 @@ import {Table,Pagination,Spin,Button,Popconfirm, message,Drawer} from 'antd'
 import {GetPeople,DelPeople,chaPeople} from  '../../../api/people'
 import UpdatePeople from '../Update/Update'
 import styles from './list.module.less'
+import './list.module.css'
 
 const pageSize=5
 class GoodsList extends Component{
@@ -14,30 +15,37 @@ class GoodsList extends Component{
         dataIndex:'sid',
         width:100,
         ellipsis: true,
+        className:"column-money"
       },
       {
         title:'姓名',
         dataIndex:'name',
+        className:"column-money"
       },
       {
         title:'院系',
         dataIndex:'fad',
+        className:"column-money"
       },
       {
         title:'年级',
         dataIndex:'grade',
+        className:"column-money"
       },
       {
         title:'学习时长',
         dataIndex:'time',
+        className:"column-money"
       },
       {
         title:'违纪次数',
         dataIndex:'num',
+        className:"column-money"
       },
       {
         title:'操作',
         width:150,
+        className:"column-money",
         render:(data)=> {
           return(
             <Fragment>
@@ -118,7 +126,7 @@ class GoodsList extends Component{
           ></Table>
         </Spin>
         <Pagination 
-          simple  
+          simple
           total={allCount} 
           pageSize={pageSize} 
           onChange={(page)=>{

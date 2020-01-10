@@ -14,11 +14,24 @@ class Admin extends React.Component{
         return(
           <Fragment>
             <Layout className={styles.admin}>
-            <Sider  collapsed={false}>
+            <Sider style={{backgroundColor:"#001535"}} collapsed={false}>
               <SliderNav></SliderNav>
             </Sider>
             <Layout>
-              <Header style={{ background: '#fff', padding: 0,textAlign:'right',paddingRight:'20px',cursor:'pointer'}} >
+              <Header 
+               style={{
+                 backgroundImage: "url(http://imgsrc.baidu.com/imgad/pic/item/d1a20cf431adcbefe90f823ca7af2edda3cc9fd5.jpg)",
+                 backgroundSize:"100%",padding: 0,
+               textAlign:'right',paddingRight:'20px',cursor:'pointer'}} 
+               >
+                 {/* <img src="http://www.library.fudan.edu.cn/_upload/tpl/00/05/5/template5/images/logo.png" style={{
+                   float:"left"
+                 }} width='200'/> */}
+                 <div style={{backgroundImage:"url(http://www.library.fudan.edu.cn/_upload/tpl/00/05/5/template5/images/logo.png)",
+                    backgroundSize:"350% 100%",
+                    width:"80px",float:"left",height:"80%",marginTop:"5px",marginLeft:"10px"
+                }}
+                 ></div>
                 <Icon className="trigger"/>
                 <HeaderNav></HeaderNav>
               </Header>
@@ -26,13 +39,15 @@ class Admin extends React.Component{
                 style={{
                   margin: '24px 16px',
                   padding: 24,
-                  background: '#fff',
+                  background: 'skyblue',
                   minHeight: 280,
                 }}
                 >
                {this.props.children}
               </Content>
-              <Footer style={{height:'80px'}}>
+              <Footer style={{backgroundImage:"url(http://pic2.cxtuku.com/00/00/46/b879273d26e6.jpg)"
+              ,backgroundSize:"100% 200%"
+              ,height:'80px'}}>
                 <div className={styles.foot}>
                   版权所有:天韵组
                   <p><em>本网站纯属意外只为奖品而生，如有雷同纯属正常</em></p>

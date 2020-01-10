@@ -1,7 +1,8 @@
 import React from 'react'
-import {Dropdown,Menu,Icon,notification} from 'antd'
+import {Dropdown,Menu,Icon,notification,Avatar} from 'antd'
 import {clear} from '../../utils/webStorage'
 import {UserLogout} from '../../api/user'
+import styles from "./header.module.less"
 const menuData=[
     {path:'',name:"个人信息",icon:'user'},
     {path:'',name:"个人设置",icon:'user'},
@@ -53,8 +54,8 @@ class HeaderNav extends React.Component{
       render() {
           return (
             <Dropdown overlay={this.renderMenu(menuData)}>
-              <span className="ant-dropdown-link">
-              天韵组 <Icon type="down" />
+              <span className="ant-dropdown-link" style={{color:"#fff"}}>
+              <Avatar icon="user" size="large" className={styles.user} />
               </span>
             </Dropdown>
           );
