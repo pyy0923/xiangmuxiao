@@ -14,27 +14,33 @@ class GoodsList extends Component{
         dataIndex:'mid',
         width:100,
         ellipsis: true,
+        className:"column-money"
       },
       {
         title:'菜名',
         dataIndex:'name',
+        className:"column-money"
       },
       {
         title:'菜系',
         dataIndex:'caixi',
+        className:"column-money"
       },
       {
         title:'描述',
         dataIndex:'miaoshu',
+        className:"column-money"
       },
       {
         title:'价格',
         dataIndex:'price',
+        className:"column-money"
       },
      
       {
         title:'操作',
         width:150,
+        className:"column-money",
         render:(data)=> {
           return(
             <Fragment>

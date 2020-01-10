@@ -47,7 +47,7 @@ class SliderNav extends React.Component{
     render(){
         let{menuData}=this.state
         return(
-            <Menu mode='vertical' theme='dark'>
+            <Menu style={{backgroundColor:"#001535"}} mode='vertical' theme='dark'>
                 {this.renderItem(menuData)}
             </Menu>
         )

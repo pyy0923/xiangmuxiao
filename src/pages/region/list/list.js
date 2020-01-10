@@ -14,22 +14,27 @@ class RegionList extends Component{
         dataIndex:'rid',
         width:100,
         ellipsis: true,
+        className:"column-money"
       },
       {
         title:'地区名',
         dataIndex:'name',
+        className:"column-money"
       },
       {
         title:'地区简介',
         dataIndex:'desc',
+        className:"column-money"
       },
       {
         title:'邮政编码',
         dataIndex:'postal',
+        className:"column-money"
       },
       {
         title:'操作',
         width:150,
+        className:"column-money",
         render:(data)=> {
           return(
             <Fragment>

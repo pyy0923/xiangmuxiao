@@ -10,27 +10,33 @@ class BooksList extends Component {
         this.columns=[
             {
                 title:'图书号',
-                dataIndex:'bid'
+                dataIndex:'bid',
+                className:"column-money"
             },
             {
                 title:'图书名',
-                dataIndex:'name'
+                dataIndex:'name',
+                className:"column-money"
             },
             {
                 title:'图书分类',
-                dataIndex:'category'
+                dataIndex:'category',
+                className:"column-money"
             },
             {
                 title:'图书描述',
-                dataIndex:'desc'
+                dataIndex:'desc',
+                className:"column-money"
             },
             {
                 title:'价格',
-                dataIndex:'price'
+                dataIndex:'price',
+                className:"column-money"
             },
             {
               title:'操作',
               width:150,
+              className:"column-money",
               render:(data)=> {
                 return(
                   <Fragment>
@@ -100,6 +106,7 @@ class BooksList extends Component {
                 simple  
                 total={allCount} 
                 pageSize={pageSize} 
+                style={{float:"right"}}
                 onChange={(page)=>{
                     this.getTableData(page)
                 }}
