@@ -56,19 +56,19 @@ export default [
       ]
     },
     {
-      name:'菜单管理',
+      name:'预约管理',
       icon:"menu",
       path:'',
       id:'4',
       children:[
         {
-          name:'菜单列表',
+          name:'人员列表',
           icon:"menu",
           path:'/admin/menus/list',
           id:'4-0'
         },
         {
-          name:'菜系添加',
+          name:'人员添加',
           icon:"menu",
           path:'/admin/menus/add',
           id:'4-1'

@@ -9,10 +9,10 @@ class addMenus extends Component{
     super()
     this.state={
       mid:'01',
-      name:'红烧肉',
-      caixi:'鲁菜',
-      miaoshu:'好吃',
-      price:'43元'
+      name:'张飞',
+      caixi:'2019-1-10',
+      miaoshu:'1排1列',
+      price:'准时到达'
     }
   }
   submit=()=>{
@@ -25,31 +25,31 @@ class addMenus extends Component{
     return (
       <div className={styles.box}>
         <div className={styles.kuang}>
-         菜号: <input type='text' value={mid} 
+         预约单号: <input type='text' value={mid} 
           onChange={(e)=>{
             this.setState({mid:e.target.value})
           }}
           />
           <br/>
-          菜名: <input type='text' value={name} 
+          姓名: <input type='text' value={name} 
           onChange={(e)=>{
             this.setState({name:e.target.value})
           }}
           />
           <br/>
-          菜系: <input type='text' value={caixi} 
+          预约时间: <input type='text' value={caixi} 
           onChange={(e)=>{
             this.setState({caixi:e.target.value})
           }}
           />
           <br/>
-          描述: <input type='text' value={miaoshu} 
+          座位号: <input type='text' value={miaoshu} 
           onChange={(e)=>{
             this.setState({miaoshu:e.target.value})
           }}
           />
           <br/>
-          价格: <input type='text' value={price} 
+          备注: <input type='text' value={price} 
           onChange={(e)=>{
             this.setState({price:e.target.value})
           }}

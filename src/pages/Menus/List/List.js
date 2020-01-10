@@ -10,25 +10,25 @@ class GoodsList extends Component{
     super()
     this.columns=[
       {
-        title:'菜号',
+        title:'预约单号',
         dataIndex:'mid',
         width:100,
         ellipsis: true,
       },
       {
-        title:'菜名',
+        title:'姓名',
         dataIndex:'name',
       },
       {
-        title:'菜系',
+        title:'预约时间',
         dataIndex:'caixi',
       },
       {
-        title:'描述',
+        title:'座位号',
         dataIndex:'miaoshu',
       },
       {
-        title:'价格',
+        title:'备注',
         dataIndex:'price',
       },
      
@@ -94,7 +94,7 @@ class GoodsList extends Component{
      if(this.state.kw){
       //  console.log(this.state)
        this.state.dataSource.map((item,index)=>{
-         if(item.caixi==this.state.kw){
+         if(item.name==this.state.kw){
            this.state.chaMenu.push(item)
            this.setState({dataSource: this.state.chaMenu})
           }
@@ -127,7 +127,7 @@ class GoodsList extends Component{
           closable={true}
           onClose={()=>{this.setState({drawerShow:false}) }}
           visible={drawerShow}
-          placement='bottom'
+          placement='top'
           height='400px'
           style={{textAlign:'center',marginTop:'20px'}}
         >
@@ -145,9 +145,9 @@ class GoodsList extends Component{
           onChange={(e)=>{
             this.setState({kw:e.target.value})
           }}
-          placeholder="请输入菜系"
+          placeholder="请输入姓名"
           />
-          <Button type='primary' onClick={this.submit} >菜系查询</Button>
+          <Button type='primary' onClick={this.submit} >姓名查询</Button>
       </div>
       </div>
     );

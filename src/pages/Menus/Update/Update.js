@@ -21,11 +21,11 @@ class MenusUpdate extends React.Component{
         let {mid,name,caixi,miaoshu,price}=this.state
         return(
             <div className={styles.box}>
-                菜号:<input type='text' value={mid} onChange={(e)=>{this.setState({mid:e.target.value})}} /><br/>
-                菜名:<input type='text' value={name} onChange={(e)=>{this.setState({name:e.target.value})}} /><br/>
-                菜系:<input type='text' value={caixi} onChange={(e)=>{this.setState({caixi:e.target.value})}} /><br/>
-                描述:<input type='text' value={miaoshu} onChange={(e)=>{this.setState({miaoshu:e.target.value})}} /><br/>
-                价格:<input type='text' value={price} onChange={(e)=>{this.setState({price:e.target.value})}} /><br/>
+                预约号:<input type='text' value={mid} onChange={(e)=>{this.setState({mid:e.target.value})}} /><br/>
+                姓名:<input type='text' value={name} onChange={(e)=>{this.setState({name:e.target.value})}} /><br/>
+                预约时间:<input type='text' value={caixi} onChange={(e)=>{this.setState({caixi:e.target.value})}} /><br/>
+                座位号:<input type='text' value={miaoshu} onChange={(e)=>{this.setState({miaoshu:e.target.value})}} /><br/>
+                备注:<input type='text' value={price} onChange={(e)=>{this.setState({price:e.target.value})}} /><br/>
                
                 <Button type='primary' onClick={this.submit}>修改</Button>
             </div>
