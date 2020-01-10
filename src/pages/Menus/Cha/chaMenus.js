@@ -7,7 +7,7 @@ class ChaMenus extends Component{
   constructor(){
     super()
     this.state={
-     kw:'粤菜'
+     kw:'张飞'
     }
   }
   submit=()=>{

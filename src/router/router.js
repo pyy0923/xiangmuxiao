@@ -27,7 +27,7 @@ class AppRouter extends React.Component{
                             <Admin>
                             <Switch>
                                 <Redirect exact from='/admin' to='/admin/home'></Redirect>
-                                <Route path='/admin/ home' component={Home}></Route>
+                                <Route path='/admin/home' component={Home}></Route>
                                 <Route path='/admin/setting' component={Setting}></Route>
                                 <Route path='/admin/books/list' component={BookssList}></Route>
                                 <Route path='/admin/books/add' component={BooksAdd}></Route>
