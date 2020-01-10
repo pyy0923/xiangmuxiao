@@ -57,19 +57,19 @@ export default [
     },
     {
       name:'预约管理',
-      icon:"menu",
+      icon:"appstore",
       path:'',
       id:'4',
       children:[
         {
           name:'人员列表',
-          icon:"menu",
+          icon:"appstore",
           path:'/admin/menus/list',
           id:'4-0'
         },
         {
           name:'人员添加',
-          icon:"menu",
+          icon:"appstore",
           path:'/admin/menus/add',
           id:'4-1'
         }
